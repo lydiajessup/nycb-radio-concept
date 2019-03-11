@@ -73,6 +73,7 @@ function preload() {
   soundFormats('m4a');
   soundtest1 = loadSound('sounds/Nycb_test_1.m4a');
   soundtest2 = loadSound('sounds/Nycb_test_2.m4a');
+  queens_9 = loadSound('sounds/queens_9.m4a');
 }
 
 
@@ -197,14 +198,23 @@ function mouseReleased() {
   console.log(sliderx);
 
   //play test sound when bar is released
+  
+  //play test sound 1
   if (sliderx >= sliderStart & sliderx <= sliderStart+bkTicks*1){
     soundtest1.setVolume(0.1);
     soundtest1.play();
   }
 
+  //play test sound 2
   if (sliderx >= sliderStart+bronx & sliderx <= sliderStart+bronx+bxTicks){
      soundtest2.setVolume(0.1);
      soundtest2.play();
+  }
+  
+  //play megans test
+    if (sliderx >= sliderStart+queens+qTicks*8 & sliderx <= sliderStart+queens+qTicks*9){
+     queens_9.setVolume(0.1);
+     queens_9.play();
   }
 
 }
